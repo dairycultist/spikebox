@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkixdaurit63o"]
+[gd_scene load_steps=9 format=3 uid="uid://dkixdaurit63o"]
 
 [ext_resource type="Script" uid="uid://df11855115q5a" path="res://camera.gd" id="1_p57ef"]
 [ext_resource type="Texture2D" uid="uid://crfw2w474aqsi" path="res://box.png" id="2_u5sy4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://7qeo043rcd8y" path="res://player.gd" id="4_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://gdji5rqvu40i" path="res://player.png" id="5_vtaks"]
 [ext_resource type="Script" uid="uid://u4t5rcvlhkcl" path="res://ping/ping.gd" id="6_kvpfn"]
+[ext_resource type="Script" uid="uid://bw1v11maie6vo" path="res://points_label.gd" id="7_u5sy4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlwt5"]
 size = Vector2(8, 8)
@@ -37,3 +38,13 @@ shape = SubResource("RectangleShape2D_tlwt5")
 
 [node name="Ping" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource("6_kvpfn")
+
+[node name="PointsLabel" type="RichTextLabel" parent="."]
+offset_left = -35.0
+offset_top = -15.0
+offset_right = 35.0
+offset_bottom = 15.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_u5sy4")

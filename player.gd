@@ -32,4 +32,5 @@ func on_body_entered(body) -> void:
 		
 		# lose
 		Pulse.reset()
+		Points.save_and_reset()
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/title.tscn")

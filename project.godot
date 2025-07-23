@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Pulse="*res://pulse.gd"
 Modifier="*res://modifier.gd"
+Points="*res://points.gd"
 
 [input]
 
