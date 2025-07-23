@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://dkixdaurit63o"]
+[gd_scene load_steps=3 format=3 uid="uid://dkixdaurit63o"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://crfw2w474aqsi" path="res://box.png" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://df11855115q5a" path="res://camera.gd" id="1_fj7yv"]
+
+[node name="World" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+zoom = Vector2(2, 2)
+script = ExtResource("1_fj7yv")
+
+[node name="Box" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 2)
+texture = ExtResource("1_f3sb7")
