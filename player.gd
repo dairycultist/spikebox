@@ -27,4 +27,6 @@ func _process(delta: float) -> void:
 	position.y = clamp(position.y, -60, 60)
 
 func on_body_entered(body) -> void:
-	print("a")
+	
+	if body.is_in_group("Deadly"):
+		print("Lose!")
