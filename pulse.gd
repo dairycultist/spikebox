@@ -7,6 +7,10 @@ var bpm := 80 # 80 lowest, 180 highest
 var _secs_to_next_pulse := 60.0 / bpm
 var _pulse_index := -1
 
+func reset():
+	_pulse_index = -1
+	bpm = 80
+
 func pause():
 	
 	_pulse_index = -1

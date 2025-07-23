@@ -29,4 +29,7 @@ func _process(delta: float) -> void:
 func on_body_entered(body) -> void:
 	
 	if body.is_in_group("Deadly"):
-		print("Lose!")
+		
+		# lose
+		Pulse.reset()
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/title.tscn")

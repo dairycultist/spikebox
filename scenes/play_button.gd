@@ -6,4 +6,6 @@ func _ready() -> void:
 
 func on_pressed():
 	
+	# start game
+	Pulse.play()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
