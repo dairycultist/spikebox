@@ -14,5 +14,8 @@ func _process(delta: float) -> void:
 	if (secs_to_next_pulse <= 0.0):
 		
 		pulse.emit(pulse_index)
-		pulse_index = (pulse_index + 1) % 4
+		pulse_index = (pulse_index + 1) % (3 if Modifier.waltz else 4)
 		secs_to_next_pulse = 60.0 / bpm
+		
+		if Modifier.no_rhythm:
+			secs_to_next_pulse *= RandomNumberGenerator.new().randf_range(0.5, 1.2)

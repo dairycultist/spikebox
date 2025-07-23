@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	elif Input.is_action_pressed("move_right"):
 		position.x += move_speed * delta
 	
-	if Input.is_action_pressed("jump") and position.y > 58.0:
+	if Input.is_action_pressed("jump") and position.y > 58.0 and not Modifier.fatass:
 		vertical_velocity = -jump_speed
 	
 	vertical_velocity += gravity * delta
