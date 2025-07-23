@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7q380rblht2e"]
+
+[ext_resource type="Script" uid="uid://df11855115q5a" path="res://camera.gd" id="1_4ignj"]
+[ext_resource type="Script" uid="uid://cyvfkrxdwrufk" path="res://scenes/play_button.gd" id="2_wosw1"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_4ignj"]
+action = &"select"
+
+[sub_resource type="Shortcut" id="Shortcut_wosw1"]
+events = [SubResource("InputEventAction_4ignj")]
+
+[node name="Title" type="Node2D"]
+
+[node name="Title" type="RichTextLabel" parent="."]
+offset_left = -127.0
+offset_top = -108.0
+offset_right = 129.0
+offset_bottom = -38.0
+text = "SPIKEBOX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_4ignj")
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = -60.0
+offset_top = -30.0
+offset_right = 60.0
+offset_bottom = 30.0
+shortcut = SubResource("Shortcut_wosw1")
+text = "PLAY"
+script = ExtResource("2_wosw1")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkixdaurit63o"]
+
+[ext_resource type="Script" uid="uid://df11855115q5a" path="res://camera.gd" id="1_p57ef"]
+[ext_resource type="Texture2D" uid="uid://crfw2w474aqsi" path="res://box.png" id="2_u5sy4"]
+[ext_resource type="Script" uid="uid://ci8l5oq3x1g4d" path="res://spike_spawner.gd" id="3_gee14"]
+[ext_resource type="Script" uid="uid://7qeo043rcd8y" path="res://player.gd" id="4_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://gdji5rqvu40i" path="res://player.png" id="5_vtaks"]
+[ext_resource type="Script" uid="uid://u4t5rcvlhkcl" path="res://ping/ping.gd" id="6_kvpfn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlwt5"]
+size = Vector2(8, 8)
+
+[node name="World" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+script = ExtResource("1_p57ef")
+
+[node name="Box" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_u5sy4")
+
+[node name="SpikeSpawner" type="Node2D" parent="."]
+position = Vector2(0, 60)
+script = ExtResource("3_gee14")
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("4_0tnpc")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("5_vtaks")
+
+[node name="Body" type="Area2D" parent="Player"]
+
+[node name="Collider" type="CollisionShape2D" parent="Player/Body"]
+shape = SubResource("RectangleShape2D_tlwt5")
+
+[node name="Ping" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("6_kvpfn")
