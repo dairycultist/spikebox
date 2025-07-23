@@ -2,7 +2,9 @@ extends Node
 
 signal pulse
 
-var secs_to_next_pulse := 0.75
+var bpm := 80
+
+var secs_to_next_pulse := 60.0 / bpm
 var pulse_index := 1
 
 func _process(delta: float) -> void:
@@ -13,4 +15,4 @@ func _process(delta: float) -> void:
 		
 		pulse.emit(pulse_index)
 		pulse_index = (pulse_index + 1) % 4
-		secs_to_next_pulse = 0.75
+		secs_to_next_pulse = 60.0 / bpm
