@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkixdaurit63o"]
+[gd_scene load_steps=10 format=3 uid="uid://dkixdaurit63o"]
 
 [ext_resource type="Script" uid="uid://df11855115q5a" path="res://camera.gd" id="1_p57ef"]
 [ext_resource type="Texture2D" uid="uid://crfw2w474aqsi" path="res://box.png" id="2_u5sy4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://gdji5rqvu40i" path="res://player.png" id="5_vtaks"]
 [ext_resource type="Script" uid="uid://u4t5rcvlhkcl" path="res://ping/ping.gd" id="6_kvpfn"]
 [ext_resource type="Script" uid="uid://bw1v11maie6vo" path="res://points_label.gd" id="7_u5sy4"]
+[ext_resource type="Theme" uid="uid://nyd5igho518v" path="res://theme.tres" id="8_gee14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlwt5"]
 size = Vector2(8, 8)
@@ -40,11 +41,39 @@ shape = SubResource("RectangleShape2D_tlwt5")
 script = ExtResource("6_kvpfn")
 
 [node name="PointsLabel" type="RichTextLabel" parent="."]
-offset_left = -35.0
-offset_top = -15.0
-offset_right = 35.0
-offset_bottom = 15.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 90.0
+offset_bottom = 90.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("8_gee14")
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_u5sy4")
+
+[node name="ModifierPicker" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Choice1" type="Button" parent="ModifierPicker"]
+layout_mode = 0
+offset_left = -55.0
+offset_top = -12.5
+offset_right = 345.0
+offset_bottom = 237.5
+scale = Vector2(0.1, 0.1)
+theme = ExtResource("8_gee14")
+text = "Choice 1"
+
+[node name="Choice2" type="Button" parent="ModifierPicker"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = -12.5
+offset_right = 415.0
+offset_bottom = 237.5
+scale = Vector2(0.1, 0.1)
+theme = ExtResource("8_gee14")
+text = "Choice 2"
