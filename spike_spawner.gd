@@ -1,6 +1,7 @@
 extends Node2D
 
 var SPIKE = preload("res://spike/spike.tscn")
+var SPIKE_TALL = preload("res://spike/spike_tall.tscn")
 
 func _ready() -> void:
 	Pulse.pulse.connect(on_pulse)
@@ -55,9 +56,19 @@ func on_pulse(i):
 		# spawn new spikes
 		for n in range(0, 4):
 			
-			var spike = SPIKE.instantiate()
+			var spike = SPIKE_TALL.instantiate() if Modifier.ate_their_veggies else SPIKE.instantiate()
 			add_child(spike)
 			spike.position.x = RandomNumberGenerator.new().randi_range(-60, 60)
 			
 			if Modifier.conveyor:
 				spike.set_meta("direction", RandomNumberGenerator.new().randi_range(0, 1) * 2 - 1)
+	
+	elif i == 2:
+		
+		if Modifier.good_memory:
+			modulate = Color(0.0, 0.0, 0.0) if Modifier.waltz else Color(0.15, 0.15, 0.15)
+	
+	elif i == 3:
+		
+		if Modifier.good_memory:
+			modulate = Color(0.0, 0.0, 0.0)
