@@ -1,9 +1,8 @@
-# spikebox
+# Spikebox
 
-arcade roguelike
-
-modifiers appear every once in a while to make your run harder
+Arcade roguelike where you avoid spikes in a box. Modifiers appear every once in
+a while to make your run harder.
 
 TODO
-1. ability to pick modifiers during game (harder ones award more points)
-2. style!
+Add some style!
+I think there's a weird bug with when points are awarded but idc rn
