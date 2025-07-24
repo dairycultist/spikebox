@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkixdaurit63o"]
+[gd_scene load_steps=11 format=3 uid="uid://dkixdaurit63o"]
 
 [ext_resource type="Script" uid="uid://df11855115q5a" path="res://camera.gd" id="1_p57ef"]
 [ext_resource type="Texture2D" uid="uid://crfw2w474aqsi" path="res://box.png" id="2_u5sy4"]
 [ext_resource type="Script" uid="uid://ci8l5oq3x1g4d" path="res://spike_spawner.gd" id="3_gee14"]
 [ext_resource type="Script" uid="uid://7qeo043rcd8y" path="res://player.gd" id="4_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://gdji5rqvu40i" path="res://player.png" id="5_vtaks"]
-[ext_resource type="Script" uid="uid://u4t5rcvlhkcl" path="res://ping/ping.gd" id="6_kvpfn"]
+[ext_resource type="Script" uid="uid://u4t5rcvlhkcl" path="res://pulse_sound/pulse_sound.gd" id="6_kvpfn"]
 [ext_resource type="Script" uid="uid://bw1v11maie6vo" path="res://points_label.gd" id="7_u5sy4"]
 [ext_resource type="Theme" uid="uid://nyd5igho518v" path="res://theme.tres" id="8_gee14"]
+[ext_resource type="Script" uid="uid://d3rftxy0gpavd" path="res://scenes/modifier_picker.gd" id="9_0tnpc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlwt5"]
 size = Vector2(8, 8)
@@ -37,7 +38,7 @@ texture = ExtResource("5_vtaks")
 [node name="Collider" type="CollisionShape2D" parent="Player/Body"]
 shape = SubResource("RectangleShape2D_tlwt5")
 
-[node name="Ping" type="AudioStreamPlayer2D" parent="."]
+[node name="PulseSound" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource("6_kvpfn")
 
 [node name="PointsLabel" type="RichTextLabel" parent="."]
@@ -57,6 +58,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("9_0tnpc")
 
 [node name="Choice1" type="Button" parent="ModifierPicker"]
 layout_mode = 0
@@ -67,6 +69,7 @@ offset_bottom = 237.5
 scale = Vector2(0.1, 0.1)
 theme = ExtResource("8_gee14")
 text = "Choice 1"
+autowrap_mode = 2
 
 [node name="Choice2" type="Button" parent="ModifierPicker"]
 layout_mode = 0
@@ -77,3 +80,4 @@ offset_bottom = 237.5
 scale = Vector2(0.1, 0.1)
 theme = ExtResource("8_gee14")
 text = "Choice 2"
+autowrap_mode = 2

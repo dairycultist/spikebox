@@ -1,9 +1,7 @@
 extends AudioStreamPlayer2D
 
-# maybe rename to pulse_sound idk
-
-var HIGH = preload("res://ping/high.wav")
-var LOW = preload("res://ping/low.wav")
+var HIGH = preload("res://pulse_sound/high.wav")
+var LOW = preload("res://pulse_sound/low.wav")
 
 func _ready() -> void:
 	Pulse.pulse.connect(on_pulse)
